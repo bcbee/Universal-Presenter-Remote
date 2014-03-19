@@ -76,6 +76,7 @@
             this.CustomProcessTextBox.Size = new System.Drawing.Size(260, 20);
             this.CustomProcessTextBox.TabIndex = 3;
             this.CustomProcessTextBox.Visible = false;
+            this.CustomProcessTextBox.TextChanged += new System.EventHandler(this.CustomProcessTextBox_TextChanged);
             // 
             // ConnectButton
             // 

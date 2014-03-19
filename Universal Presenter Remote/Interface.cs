@@ -35,6 +35,15 @@ namespace Universal_Presenter_Remote
 
         private void SelectProgramDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (slidectl.supportedPrograms[this.SelectProgramDropdown.SelectedIndex].Name == "Manual Program Entry (Advanced)")
+            {
+                this.CustomProcessTextBox.Visible = true;
+            }
+            else
+            {
+                this.CustomProcessTextBox.Visible = false;
+            }
+            
             slidectl.presentationSoftware = this.SelectProgramDropdown.SelectedIndex;
         }
 
@@ -51,11 +60,15 @@ namespace Universal_Presenter_Remote
             if (this.ConnectButton.Text == "Connect")
             {
                 this.ConnectButton.Enabled = false;
+                this.CustomProcessTextBox.Enabled = false;
+                this.SelectProgramDropdown.Enabled = false;
                 this.ConnectButton.Text = "Connecting...";
                 if (this.slidectl.connect())
                 {
                     this.ConnectButton.Text = "Disconnect";
                     this.ConnectButton.Enabled = true;
+                    this.CustomProcessTextBox.Enabled = false;
+                    this.SelectProgramDropdown.Enabled = false;
                     this.ManualForward.Enabled = true;
                     this.ManualBack.Enabled = true;
                 }
@@ -63,6 +76,8 @@ namespace Universal_Presenter_Remote
                 {
                     this.ConnectButton.Text = "Connection Failed";
                     this.ConnectButton.Enabled = true;
+                    this.CustomProcessTextBox.Enabled = true;
+                    this.SelectProgramDropdown.Enabled = true;
                     this.ManualForward.Enabled = false;
                     this.ManualBack.Enabled = false;
                 }
@@ -70,11 +85,18 @@ namespace Universal_Presenter_Remote
             else
             {
                 this.ConnectButton.Text = "Connect";
+                this.CustomProcessTextBox.Enabled = true;
+                this.SelectProgramDropdown.Enabled = true;
                 this.ManualForward.Enabled = false;
                 this.ManualBack.Enabled = false;
             }
             
 
+        }
+
+        private void CustomProcessTextBox_TextChanged(object sender, EventArgs e)
+        {
+            slidectl.supportedPrograms[this.SelectProgramDropdown.SelectedIndex].ControlWindow = this.CustomProcessTextBox.Text;
         }
     }
 }

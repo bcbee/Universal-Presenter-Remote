@@ -19,7 +19,7 @@ namespace Universal_Presenter_Remote
         public SupportedProgram[] supportedPrograms = new SupportedProgram[] {
                 new SupportedProgram("Microsoft PowerPoint", "powerpnt", "pwrpnt.exe"),
                 new SupportedProgram("Internet Explorer", "iexplore", "iexplore.exe"),
-                new SupportedProgram("FailWhale", "NHEISF", "lsdkfsiu.exe")
+                new SupportedProgram("Manual Program Entry (Advanced)", "TBD", "TBD")
         };
 
         private void slidecontrol(bool direction)
