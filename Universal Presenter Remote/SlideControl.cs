@@ -14,20 +14,21 @@ namespace Universal_Presenter_Remote
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr point);
 
-        public int presentationSoftware {get; set;}
+        public static int presentationSoftware {get; set;}
+        public static int currentSlide = 5000;
 
-        public SupportedProgram[] supportedPrograms = new SupportedProgram[] {
+        public static SupportedProgram[] supportedPrograms = new SupportedProgram[] {
                 new SupportedProgram("Microsoft PowerPoint", "powerpnt", "pwrpnt.exe"),
                 new SupportedProgram("Internet Explorer", "iexplore", "iexplore.exe"),
                 new SupportedProgram("Manual Program Entry (Advanced)", "TBD", "TBD")
         };
 
-        private void slidecontrol(bool direction)
+        public static void slidecontrol(bool direction)
         {
-            Process p = Process.GetProcessesByName(supportedPrograms[this.presentationSoftware].ControlWindow).FirstOrDefault();
+            Process p = Process.GetProcessesByName(supportedPrograms[presentationSoftware].ControlWindow).FirstOrDefault();
             if (p == null)
             {
-                p = Process.Start(supportedPrograms[this.presentationSoftware].StartProcess);
+                p = Process.Start(supportedPrograms[presentationSoftware].StartProcess);
                 p.WaitForInputIdle();
             }
             IntPtr h = p.MainWindowHandle;
@@ -44,12 +45,12 @@ namespace Universal_Presenter_Remote
 
         public bool connect()
         {
-            Process p = Process.GetProcessesByName(supportedPrograms[this.presentationSoftware].ControlWindow).FirstOrDefault();
+            Process p = Process.GetProcessesByName(supportedPrograms[presentationSoftware].ControlWindow).FirstOrDefault();
             if (p == null)
             {
                 try
                 {
-                    p = Process.Start(supportedPrograms[this.presentationSoftware].StartProcess);
+                    p = Process.Start(supportedPrograms[presentationSoftware].StartProcess);
                 }
                 catch
                 {
@@ -63,12 +64,12 @@ namespace Universal_Presenter_Remote
             return true;
         }
 
-        public void slideforward()
+        public static void slideforward()
         {
             slidecontrol(true);
         }
 
-        public void slidebackward()
+        public static void slidebackward()
         {
             slidecontrol(false);
         }

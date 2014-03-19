@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ManualBack = new System.Windows.Forms.Button();
             this.ManualForward = new System.Windows.Forms.Button();
             this.SelectProgramDropdown = new System.Windows.Forms.ComboBox();
             this.CustomProcessTextBox = new System.Windows.Forms.TextBox();
             this.ConnectButton = new System.Windows.Forms.Button();
+            this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ManualBack
@@ -88,6 +90,12 @@
             this.ConnectButton.UseVisualStyleBackColor = true;
             this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
             // 
+            // UpdateTimer
+            // 
+            this.UpdateTimer.Enabled = true;
+            this.UpdateTimer.Interval = 1000;
+            this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,5 +123,6 @@
         private System.Windows.Forms.ComboBox SelectProgramDropdown;
         private System.Windows.Forms.TextBox CustomProcessTextBox;
         private System.Windows.Forms.Button ConnectButton;
+        private System.Windows.Forms.Timer UpdateTimer;
     }
 }

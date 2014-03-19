@@ -25,17 +25,17 @@ namespace Universal_Presenter_Remote
 
         private void ManualBack_Click(object sender, EventArgs e)
         {
-            slidectl.slidebackward();
+            SlideControl.slidebackward();
         }
 
         private void ManualForward_Click(object sender, EventArgs e)
         {
-            slidectl.slideforward();
+            SlideControl.slideforward();
         }
 
         private void SelectProgramDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (slidectl.supportedPrograms[this.SelectProgramDropdown.SelectedIndex].Name == "Manual Program Entry (Advanced)")
+            if (SlideControl.supportedPrograms[this.SelectProgramDropdown.SelectedIndex].Name == "Manual Program Entry (Advanced)")
             {
                 this.CustomProcessTextBox.Visible = true;
             }
@@ -44,15 +44,16 @@ namespace Universal_Presenter_Remote
                 this.CustomProcessTextBox.Visible = false;
             }
             
-            slidectl.presentationSoftware = this.SelectProgramDropdown.SelectedIndex;
+            SlideControl.presentationSoftware = this.SelectProgramDropdown.SelectedIndex;
         }
 
         private void Interface_Load(object sender, EventArgs e)
         {
-            this.SelectProgramDropdown.DataSource = slidectl.supportedPrograms;
+            this.SelectProgramDropdown.DataSource = SlideControl.supportedPrograms;
             this.SelectProgramDropdown.DisplayMember = "Name";
             this.SelectProgramDropdown.ValueMember = "StartProcess";
             this.SelectProgramDropdown.SelectedIndex = 0;
+            this.UpdateTimer.Start();
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
@@ -71,6 +72,7 @@ namespace Universal_Presenter_Remote
                     this.SelectProgramDropdown.Enabled = false;
                     this.ManualForward.Enabled = true;
                     this.ManualBack.Enabled = true;
+                    Server_Communication.enabled = true;
                 }
                 else
                 {
@@ -89,6 +91,7 @@ namespace Universal_Presenter_Remote
                 this.SelectProgramDropdown.Enabled = true;
                 this.ManualForward.Enabled = false;
                 this.ManualBack.Enabled = false;
+                Server_Communication.enabled = false;
             }
             
 
@@ -96,7 +99,12 @@ namespace Universal_Presenter_Remote
 
         private void CustomProcessTextBox_TextChanged(object sender, EventArgs e)
         {
-            slidectl.supportedPrograms[this.SelectProgramDropdown.SelectedIndex].ControlWindow = this.CustomProcessTextBox.Text;
+            SlideControl.supportedPrograms[this.SelectProgramDropdown.SelectedIndex].ControlWindow = this.CustomProcessTextBox.Text;
+        }
+
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            Server_Communication.update();
         }
     }
 }
