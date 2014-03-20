@@ -76,7 +76,7 @@ namespace Universal_Presenter_Remote
             bool cont = false;
             int t = 0;
 
-            if (token1.Text != "" && token2.Text != "" && token3.Text != "" && token4.Text != "" && token5.Text != "" && token6.Text != "")
+            if (token1.Text != "" && token2.Text != "" && token3.Text != "" && token4.Text != "" && token5.Text != "" && token6.Text != "" && Server_Communication.serverAvailable)
             {
                 string token = token1.Text + token2.Text + token3.Text + token4.Text + token5.Text + token6.Text;
                 cont = true;
@@ -104,6 +104,29 @@ namespace Universal_Presenter_Remote
             {
                 PresentButton.Enabled = false;
             }
+        }
+
+        private void ServerTimer_Tick(object sender, EventArgs e)
+        {
+            Server_Communication.checkStatus();
+            if (Server_Communication.serverAvailable)
+            {
+                PresentButton.Text = "Click to start!";
+                ControlButton.Text = "Click to start!";
+                ControlButton.Enabled = true;
+            }
+            else
+            {
+                PresentButton.Text = "Connecting...";
+                ControlButton.Text = "Connecting...";
+                ControlButton.Enabled = false;
+            }
+            validate();
+        }
+
+        private void ControlButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LoginTabControl = new System.Windows.Forms.TabControl();
             this.JumpInPage = new System.Windows.Forms.TabPage();
             this.JumpInTable = new System.Windows.Forms.TableLayoutPanel();
             this.PresentButton = new System.Windows.Forms.Button();
-            this.JumpInLogo = new System.Windows.Forms.PictureBox();
-            this.JumpInWelcomeLabel = new System.Windows.Forms.Label();
+            this.PresentLogo = new System.Windows.Forms.PictureBox();
+            this.PresentWelcome = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.token6 = new System.Windows.Forms.TextBox();
             this.token5 = new System.Windows.Forms.TextBox();
@@ -43,18 +44,19 @@
             this.token1 = new System.Windows.Forms.TextBox();
             this.LoginPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ControlToken = new System.Windows.Forms.Label();
+            this.ControlWelcome = new System.Windows.Forms.Label();
+            this.ControlButton = new System.Windows.Forms.Button();
+            this.ControlLogo = new System.Windows.Forms.PictureBox();
+            this.ServerTimer = new System.Windows.Forms.Timer(this.components);
             this.LoginTabControl.SuspendLayout();
             this.JumpInPage.SuspendLayout();
             this.JumpInTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.JumpInLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ControlLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginTabControl
@@ -85,8 +87,8 @@
             this.JumpInTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.JumpInTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.JumpInTable.Controls.Add(this.PresentButton, 1, 3);
-            this.JumpInTable.Controls.Add(this.JumpInLogo, 1, 0);
-            this.JumpInTable.Controls.Add(this.JumpInWelcomeLabel, 1, 1);
+            this.JumpInTable.Controls.Add(this.PresentLogo, 1, 0);
+            this.JumpInTable.Controls.Add(this.PresentWelcome, 1, 1);
             this.JumpInTable.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.JumpInTable.Location = new System.Drawing.Point(6, 6);
             this.JumpInTable.Name = "JumpInTable";
@@ -106,29 +108,29 @@
             this.PresentButton.Name = "PresentButton";
             this.PresentButton.Size = new System.Drawing.Size(110, 23);
             this.PresentButton.TabIndex = 2;
-            this.PresentButton.Text = "Click to start!";
+            this.PresentButton.Text = "Connecting...";
             this.PresentButton.UseVisualStyleBackColor = true;
             this.PresentButton.Click += new System.EventHandler(this.Present_Click);
             // 
-            // JumpInLogo
+            // PresentLogo
             // 
-            this.JumpInLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.JumpInLogo.Location = new System.Drawing.Point(222, 3);
-            this.JumpInLogo.Name = "JumpInLogo";
-            this.JumpInLogo.Size = new System.Drawing.Size(196, 126);
-            this.JumpInLogo.TabIndex = 3;
-            this.JumpInLogo.TabStop = false;
+            this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PresentLogo.Location = new System.Drawing.Point(222, 3);
+            this.PresentLogo.Name = "PresentLogo";
+            this.PresentLogo.Size = new System.Drawing.Size(196, 126);
+            this.PresentLogo.TabIndex = 3;
+            this.PresentLogo.TabStop = false;
             // 
-            // JumpInWelcomeLabel
+            // PresentWelcome
             // 
-            this.JumpInWelcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.JumpInWelcomeLabel.AutoSize = true;
-            this.JumpInWelcomeLabel.Location = new System.Drawing.Point(160, 144);
-            this.JumpInWelcomeLabel.Name = "JumpInWelcomeLabel";
-            this.JumpInWelcomeLabel.Size = new System.Drawing.Size(320, 13);
-            this.JumpInWelcomeLabel.TabIndex = 0;
-            this.JumpInWelcomeLabel.Text = "Welcome to Universal Presenter Remote! Please enter your token:";
-            this.JumpInWelcomeLabel.Click += new System.EventHandler(this.JumpInWelcomeLabel_Click);
+            this.PresentWelcome.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PresentWelcome.AutoSize = true;
+            this.PresentWelcome.Location = new System.Drawing.Point(160, 144);
+            this.PresentWelcome.Name = "PresentWelcome";
+            this.PresentWelcome.Size = new System.Drawing.Size(320, 13);
+            this.PresentWelcome.TabIndex = 0;
+            this.PresentWelcome.Text = "Welcome to Universal Presenter Remote! Please enter your token:";
+            this.PresentWelcome.Click += new System.EventHandler(this.JumpInWelcomeLabel_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -237,10 +239,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ControlToken, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ControlWelcome, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ControlButton, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ControlLogo, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -251,45 +253,53 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 299);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // label1
+            // ControlToken
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "123456";
+            this.ControlToken.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ControlToken.AutoSize = true;
+            this.ControlToken.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ControlToken.Location = new System.Drawing.Point(244, 173);
+            this.ControlToken.Name = "ControlToken";
+            this.ControlToken.Size = new System.Drawing.Size(152, 46);
+            this.ControlToken.TabIndex = 1;
+            this.ControlToken.Text = "123456";
             // 
-            // label2
+            // ControlWelcome
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome to Universal Presenter Remote! Your token is:\r\n";
+            this.ControlWelcome.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ControlWelcome.AutoSize = true;
+            this.ControlWelcome.Location = new System.Drawing.Point(185, 144);
+            this.ControlWelcome.Name = "ControlWelcome";
+            this.ControlWelcome.Size = new System.Drawing.Size(270, 13);
+            this.ControlWelcome.TabIndex = 0;
+            this.ControlWelcome.Text = "Welcome to Universal Presenter Remote! Your token is:\r\n";
             // 
-            // button1
+            // ControlButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(265, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Click to start!";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ControlButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ControlButton.Enabled = false;
+            this.ControlButton.Location = new System.Drawing.Point(265, 243);
+            this.ControlButton.Name = "ControlButton";
+            this.ControlButton.Size = new System.Drawing.Size(110, 23);
+            this.ControlButton.TabIndex = 2;
+            this.ControlButton.Text = "Connecting...";
+            this.ControlButton.UseVisualStyleBackColor = true;
+            this.ControlButton.Click += new System.EventHandler(this.ControlButton_Click);
             // 
-            // pictureBox1
+            // ControlLogo
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(222, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 126);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.ControlLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ControlLogo.Location = new System.Drawing.Point(222, 3);
+            this.ControlLogo.Name = "ControlLogo";
+            this.ControlLogo.Size = new System.Drawing.Size(196, 126);
+            this.ControlLogo.TabIndex = 3;
+            this.ControlLogo.TabStop = false;
+            // 
+            // ServerTimer
+            // 
+            this.ServerTimer.Enabled = true;
+            this.ServerTimer.Interval = 1000;
+            this.ServerTimer.Tick += new System.EventHandler(this.ServerTimer_Tick);
             // 
             // LoginForm
             // 
@@ -306,13 +316,13 @@
             this.JumpInPage.ResumeLayout(false);
             this.JumpInTable.ResumeLayout(false);
             this.JumpInTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.JumpInLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.LoginPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ControlLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,14 +333,14 @@
         private System.Windows.Forms.TabPage JumpInPage;
         private System.Windows.Forms.TabPage LoginPage;
         private System.Windows.Forms.TableLayoutPanel JumpInTable;
-        private System.Windows.Forms.Label JumpInWelcomeLabel;
+        private System.Windows.Forms.Label PresentWelcome;
         private System.Windows.Forms.Button PresentButton;
-        private System.Windows.Forms.PictureBox JumpInLogo;
+        private System.Windows.Forms.PictureBox PresentLogo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ControlToken;
+        private System.Windows.Forms.Label ControlWelcome;
+        private System.Windows.Forms.Button ControlButton;
+        private System.Windows.Forms.PictureBox ControlLogo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox token1;
         private System.Windows.Forms.TextBox token5;
@@ -338,6 +348,7 @@
         private System.Windows.Forms.TextBox token3;
         private System.Windows.Forms.TextBox token2;
         private System.Windows.Forms.TextBox token6;
+        private System.Windows.Forms.Timer ServerTimer;
     }
 }
 

@@ -11,15 +11,26 @@ namespace Universal_Presenter_Remote
 {
     class Server_Communication
     {
-        private static string serverAddress = "http://localhost";
+        private static string serverAddress = "http://localhost/";
+
+        public static bool serverAvailable = false;
         public static bool enabled = false;
         public static int token = 0;
 
-        private static String getResponse()
+        private static String getResponse(String page)
         {
-            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(serverAddress);
+            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(serverAddress+page);
             myRequest.Method = "GET";
-            WebResponse myResponse = myRequest.GetResponse();
+            WebResponse myResponse;
+            try
+            {
+                myResponse = myRequest.GetResponse();
+            }
+            catch
+            {
+                return "";
+            }
+            
             StreamReader sr = new StreamReader(myResponse.GetResponseStream(), System.Text.Encoding.UTF8);
             string result = sr.ReadToEnd();
             sr.Close();
@@ -28,9 +39,21 @@ namespace Universal_Presenter_Remote
             return result;
         }
 
+        public static void checkStatus()
+        {
+            if(getResponse("Alive") == "Ready")
+            {
+                serverAvailable = true;
+            }
+            else
+            {
+                serverAvailable = false;
+            }
+        }
+
         public static void update()
         {
-            string response = getResponse();
+            string response = getResponse("");
             int r = 0;
             try
             {
