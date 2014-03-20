@@ -1,6 +1,6 @@
 ﻿namespace Universal_Presenter_Remote
 {
-    partial class Interface
+    partial class PresentationInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ManualBack = new System.Windows.Forms.Button();
-            this.ManualForward = new System.Windows.Forms.Button();
             this.SelectProgramDropdown = new System.Windows.Forms.ComboBox();
             this.CustomProcessTextBox = new System.Windows.Forms.TextBox();
             this.ConnectButton = new System.Windows.Forms.Button();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // ManualBack
-            // 
-            this.ManualBack.Enabled = false;
-            this.ManualBack.Location = new System.Drawing.Point(12, 226);
-            this.ManualBack.Name = "ManualBack";
-            this.ManualBack.Size = new System.Drawing.Size(75, 23);
-            this.ManualBack.TabIndex = 0;
-            this.ManualBack.Text = "Back";
-            this.ManualBack.UseVisualStyleBackColor = true;
-            this.ManualBack.Click += new System.EventHandler(this.ManualBack_Click);
-            // 
-            // ManualForward
-            // 
-            this.ManualForward.Enabled = false;
-            this.ManualForward.Location = new System.Drawing.Point(197, 226);
-            this.ManualForward.Name = "ManualForward";
-            this.ManualForward.Size = new System.Drawing.Size(75, 23);
-            this.ManualForward.TabIndex = 1;
-            this.ManualForward.Text = "Forward";
-            this.ManualForward.UseVisualStyleBackColor = true;
-            this.ManualForward.Click += new System.EventHandler(this.ManualForward_Click);
             // 
             // SelectProgramDropdown
             // 
@@ -96,7 +72,7 @@
             this.UpdateTimer.Interval = 1000;
             this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
             // 
-            // Interface
+            // PresentationInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,12 +80,10 @@
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.CustomProcessTextBox);
             this.Controls.Add(this.SelectProgramDropdown);
-            this.Controls.Add(this.ManualForward);
-            this.Controls.Add(this.ManualBack);
             this.MaximumSize = new System.Drawing.Size(300, 300);
             this.MinimumSize = new System.Drawing.Size(300, 300);
-            this.Name = "Interface";
-            this.Text = "Interface";
+            this.Name = "PresentationInterface";
+            this.Text = "Presentation Interface";
             this.Load += new System.EventHandler(this.Interface_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,8 +92,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button ManualBack;
-        private System.Windows.Forms.Button ManualForward;
         private System.Windows.Forms.ComboBox SelectProgramDropdown;
         private System.Windows.Forms.TextBox CustomProcessTextBox;
         private System.Windows.Forms.Button ConnectButton;

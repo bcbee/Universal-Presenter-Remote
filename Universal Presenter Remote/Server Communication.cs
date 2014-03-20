@@ -13,6 +13,7 @@ namespace Universal_Presenter_Remote
     {
         private static string serverAddress = "http://localhost";
         public static bool enabled = false;
+        public static int token = 0;
 
         private static String getResponse()
         {
