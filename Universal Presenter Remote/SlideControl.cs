@@ -29,8 +29,8 @@ namespace Universal_Presenter_Remote
             if (p == null)
             {
                 p = Process.Start(supportedPrograms[presentationSoftware].StartProcess);
-                p.WaitForInputIdle();
             }
+            p.WaitForInputIdle();
             IntPtr h = p.MainWindowHandle;
             SetForegroundWindow(h);
             if (direction == true)

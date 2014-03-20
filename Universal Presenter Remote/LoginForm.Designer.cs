@@ -130,7 +130,6 @@
             this.PresentWelcome.Size = new System.Drawing.Size(320, 13);
             this.PresentWelcome.TabIndex = 0;
             this.PresentWelcome.Text = "Welcome to Universal Presenter Remote! Please enter your token:";
-            this.PresentWelcome.Click += new System.EventHandler(this.JumpInWelcomeLabel_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -258,11 +257,11 @@
             this.ControlToken.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ControlToken.AutoSize = true;
             this.ControlToken.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ControlToken.Location = new System.Drawing.Point(244, 173);
+            this.ControlToken.Location = new System.Drawing.Point(293, 173);
             this.ControlToken.Name = "ControlToken";
-            this.ControlToken.Size = new System.Drawing.Size(152, 46);
+            this.ControlToken.Size = new System.Drawing.Size(53, 46);
             this.ControlToken.TabIndex = 1;
-            this.ControlToken.Text = "123456";
+            this.ControlToken.Text = "...";
             // 
             // ControlWelcome
             // 

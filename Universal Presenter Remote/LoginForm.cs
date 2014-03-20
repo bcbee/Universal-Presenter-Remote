@@ -30,11 +30,6 @@ namespace Universal_Presenter_Remote
             token1.Select();
         }
 
-        private void JumpInWelcomeLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void token1_TextChanged(object sender, EventArgs e)
         {
             token2.Select();
@@ -112,8 +107,24 @@ namespace Universal_Presenter_Remote
             if (Server_Communication.serverAvailable)
             {
                 PresentButton.Text = "Click to start!";
-                ControlButton.Text = "Click to start!";
-                ControlButton.Enabled = true;
+                ControlToken.Text = Server_Communication.temptoken.ToString();
+                switch (Server_Communication.controlmode)
+                {
+                    case 0:
+                        ControlButton.Text = "Connecting...";
+                        ControlButton.Enabled = false;
+                        Server_Communication.temptoken = 0;
+                        break;
+                    case 1:
+                        ControlButton.Text = "Waiting...";
+                        ControlButton.Enabled = false;
+                        break;
+                    case 2:
+                        ControlButton.Text = "Click to start!";
+                        ControlButton.Enabled = true;
+                        break;
+                }
+                
             }
             else
             {
@@ -126,7 +137,7 @@ namespace Universal_Presenter_Remote
 
         private void ControlButton_Click(object sender, EventArgs e)
         {
-
+            Server_Communication.token = Server_Communication.temptoken;
         }
     }
 }

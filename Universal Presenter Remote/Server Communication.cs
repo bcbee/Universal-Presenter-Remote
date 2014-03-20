@@ -15,6 +15,8 @@ namespace Universal_Presenter_Remote
 
         public static bool serverAvailable = false;
         public static bool enabled = false;
+        public static int temptoken = 0;
+        public static int controlmode = 0;
         public static int token = 0;
 
         private static String getResponse(String page)
@@ -44,6 +46,11 @@ namespace Universal_Presenter_Remote
             if(getResponse("Alive") == "Ready")
             {
                 serverAvailable = true;
+                controlmode = Int32.Parse(getResponse("TempSession"));
+                if (temptoken == 0)
+                {
+                    temptoken = Int32.Parse(getResponse("NewSession"));
+                }
             }
             else
             {
@@ -53,7 +60,7 @@ namespace Universal_Presenter_Remote
 
         public static void update()
         {
-            string response = getResponse("");
+            string response = getResponse("ActiveSession");
             int r = 0;
             try
             {
