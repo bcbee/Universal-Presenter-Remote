@@ -40,5 +40,10 @@ namespace Universal_Presenter_Remote
                 MessageBox.Show("Sorry, there seems to be an issue with our servers. Check your internet and try again.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ControlInterface_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

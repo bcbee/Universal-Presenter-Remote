@@ -33,6 +33,8 @@
             this.CustomProcessTextBox = new System.Windows.Forms.TextBox();
             this.ConnectButton = new System.Windows.Forms.Button();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.PresentLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // SelectProgramDropdown
@@ -41,7 +43,7 @@
             this.SelectProgramDropdown.FormattingEnabled = true;
             this.SelectProgramDropdown.Items.AddRange(new object[] {
             "DataSource Failure"});
-            this.SelectProgramDropdown.Location = new System.Drawing.Point(12, 12);
+            this.SelectProgramDropdown.Location = new System.Drawing.Point(12, 149);
             this.SelectProgramDropdown.Name = "SelectProgramDropdown";
             this.SelectProgramDropdown.Size = new System.Drawing.Size(260, 21);
             this.SelectProgramDropdown.TabIndex = 2;
@@ -49,7 +51,7 @@
             // 
             // CustomProcessTextBox
             // 
-            this.CustomProcessTextBox.Location = new System.Drawing.Point(12, 39);
+            this.CustomProcessTextBox.Location = new System.Drawing.Point(12, 176);
             this.CustomProcessTextBox.Name = "CustomProcessTextBox";
             this.CustomProcessTextBox.Size = new System.Drawing.Size(260, 20);
             this.CustomProcessTextBox.TabIndex = 3;
@@ -58,7 +60,7 @@
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(12, 65);
+            this.ConnectButton.Location = new System.Drawing.Point(12, 202);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(260, 23);
             this.ConnectButton.TabIndex = 4;
@@ -72,11 +74,23 @@
             this.UpdateTimer.Interval = 750;
             this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
             // 
+            // PresentLogo
+            // 
+            this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR_Wide;
+            this.PresentLogo.Location = new System.Drawing.Point(12, 12);
+            this.PresentLogo.Name = "PresentLogo";
+            this.PresentLogo.Size = new System.Drawing.Size(260, 126);
+            this.PresentLogo.TabIndex = 5;
+            this.PresentLogo.TabStop = false;
+            // 
             // PresentationInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(2)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.PresentLogo);
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.CustomProcessTextBox);
             this.Controls.Add(this.SelectProgramDropdown);
@@ -85,6 +99,7 @@
             this.Name = "PresentationInterface";
             this.Text = "Presenter Interface";
             this.Load += new System.EventHandler(this.Interface_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +111,6 @@
         private System.Windows.Forms.TextBox CustomProcessTextBox;
         private System.Windows.Forms.Button ConnectButton;
         private System.Windows.Forms.Timer UpdateTimer;
+        private System.Windows.Forms.PictureBox PresentLogo;
     }
 }
