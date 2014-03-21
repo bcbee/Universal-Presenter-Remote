@@ -69,7 +69,7 @@
             // UpdateTimer
             // 
             this.UpdateTimer.Enabled = true;
-            this.UpdateTimer.Interval = 1000;
+            this.UpdateTimer.Interval = 750;
             this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
             // 
             // PresentationInterface

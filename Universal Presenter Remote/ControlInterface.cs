@@ -19,7 +19,7 @@ namespace Universal_Presenter_Remote
 
         private void PreviousSlideButton_Click(object sender, EventArgs e)
         {
-            if (!Server_Communication.slideDown())
+            if (!Server_Communication.sendCommand("SlideDown"))
             {
                 MessageBox.Show("Sorry, there seems to be an issue with our servers. Check your internet and try again.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -27,7 +27,15 @@ namespace Universal_Presenter_Remote
 
         private void NextSlideButton_Click(object sender, EventArgs e)
         {
-            if (!Server_Communication.slideUp())
+            if (!Server_Communication.sendCommand("SlideUp"))
+            {
+                MessageBox.Show("Sorry, there seems to be an issue with our servers. Check your internet and try again.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PlayMedia_Click(object sender, EventArgs e)
+        {
+            if (!Server_Communication.sendCommand("PlayMedia"))
             {
                 MessageBox.Show("Sorry, there seems to be an issue with our servers. Check your internet and try again.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -48,32 +48,9 @@ namespace Universal_Presenter_Remote
             uid = rnd.Next(9999, 999999999);
         }
 
-        public static bool slideUp()
+        public static bool sendCommand(string command)
         {
-            string response = getResponse("SlideUp?token=" + token + "&holdfor=" + uid);
-            int r = 0;
-            try
-            {
-                r = Int32.Parse(response);
-            }
-            catch (FormatException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            if (r == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool slideDown()
-        {
-            string response = getResponse("SlideDown?token=" + token + "&holdfor=" + uid);
+            string response = getResponse(command + "?token=" + token + "&holdfor=" + uid);
             int r = 0;
             try
             {
@@ -167,7 +144,15 @@ namespace Universal_Presenter_Remote
             {
                 if (r > SlideControl.currentSlide)
                 {
-                    SlideControl.slideforward();
+                    if ((r - SlideControl.currentSlide) >= 100)
+                    {
+                        SlideControl.playMedia();
+                    } 
+                    else
+                    {
+                        SlideControl.slideforward();
+                    }
+
                     SlideControl.currentSlide = r;
                 }
                 if (r < SlideControl.currentSlide)

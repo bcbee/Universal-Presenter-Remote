@@ -23,7 +23,7 @@ namespace Universal_Presenter_Remote
                 new SupportedProgram("Manual Program Entry (Advanced)", "TBD", "TBD")
         };
 
-        public static void slidecontrol(bool direction)
+        public static void slidecontrol(int action)
         {
             Process p = Process.GetProcessesByName(supportedPrograms[presentationSoftware].ControlWindow).FirstOrDefault();
             if (p == null)
@@ -33,13 +33,18 @@ namespace Universal_Presenter_Remote
             p.WaitForInputIdle();
             IntPtr h = p.MainWindowHandle;
             SetForegroundWindow(h);
-            if (direction == true)
+
+            switch (action)
             {
-                SendKeys.SendWait("{RIGHT}");
-            }
-            else 
-            { 
-                SendKeys.SendWait("{LEFT}");
+                case 0:
+                    SendKeys.SendWait("{LEFT}");
+                    break;
+                case 1:
+                    SendKeys.SendWait("{RIGHT}");
+                    break;
+                case 2:
+                    SendKeys.SendWait("%p");
+                    break;
             }
         }
 
@@ -66,12 +71,17 @@ namespace Universal_Presenter_Remote
 
         public static void slideforward()
         {
-            slidecontrol(true);
+            slidecontrol(1);
         }
 
         public static void slidebackward()
         {
-            slidecontrol(false);
+            slidecontrol(0);
+        }
+
+        public static void playMedia()
+        {
+            slidecontrol(2);
         }
     }
 }
