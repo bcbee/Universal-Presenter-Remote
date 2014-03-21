@@ -83,7 +83,7 @@
             this.MaximumSize = new System.Drawing.Size(300, 300);
             this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "PresentationInterface";
-            this.Text = "Presentation Interface";
+            this.Text = "Presenter Interface";
             this.Load += new System.EventHandler(this.Interface_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

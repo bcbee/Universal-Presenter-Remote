@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlInterface.Designer.cs">
+      <DependentUpon>ControlInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Server Communication.cs" />
     <Compile Include="SlideControl.cs" />
     <Compile Include="SupportedPrograms.cs" />
+    <EmbeddedResource Include="ControlInterface.resx">
+      <DependentUpon>ControlInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationInterface.resx">
       <DependentUpon>PresentationInterface.cs</DependentUpon>
     </EmbeddedResource>

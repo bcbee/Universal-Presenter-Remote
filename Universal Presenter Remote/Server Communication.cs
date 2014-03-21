@@ -12,6 +12,7 @@ namespace Universal_Presenter_Remote
     class Server_Communication
     {
         private static string serverAddress = "http://localhost/";
+        private static int uid = 0;
 
         public static bool serverAvailable = false;
         public static bool enabled = false;
@@ -41,15 +42,106 @@ namespace Universal_Presenter_Remote
             return result;
         }
 
+        public static void setupUid()
+        {
+            Random rnd = new Random();
+            uid = rnd.Next(9999, 999999999);
+        }
+
+        public static bool slideUp()
+        {
+            string response = getResponse("SlideUp?token=" + token + "&holdfor=" + uid);
+            int r = 0;
+            try
+            {
+                r = Int32.Parse(response);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            if (r == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool slideDown()
+        {
+            string response = getResponse("SlideDown?token=" + token + "&holdfor=" + uid);
+            int r = 0;
+            try
+            {
+                r = Int32.Parse(response);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            if (r == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public static bool joinSession()
+        {
+            string response = getResponse("JoinSession?token=" + token);
+            int r = 0;
+            try
+            {
+                r = Int32.Parse(response);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            if (r > 0)
+            {
+                uid = r;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static void checkStatus()
         {
             if(getResponse("Alive") == "Ready")
             {
                 serverAvailable = true;
-                controlmode = Int32.Parse(getResponse("TempSession"));
                 if (temptoken == 0)
                 {
-                    temptoken = Int32.Parse(getResponse("NewSession"));
+                    try
+                    {
+                        temptoken = Int32.Parse(getResponse("NewSession"));
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                try
+                {
+                    controlmode = Int32.Parse(getResponse("TempSession?token=" + temptoken + "&holdfor=" + uid));
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             }
             else
@@ -60,7 +152,7 @@ namespace Universal_Presenter_Remote
 
         public static void update()
         {
-            string response = getResponse("ActiveSession");
+            string response = getResponse("ActiveSession?token=" + token + "&holdfor=" + uid);
             int r = 0;
             try
             {

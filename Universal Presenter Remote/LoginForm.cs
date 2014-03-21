@@ -19,14 +19,36 @@ namespace Universal_Presenter_Remote
 
         private void Present_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PresentationInterface interfaceWindow = new PresentationInterface();
-            interfaceWindow.ShowDialog();
-            this.Show();
+            if (Server_Communication.joinSession())
+            {
+                this.Hide();
+                PresentationInterface interfaceWindow = new PresentationInterface();
+                interfaceWindow.ShowDialog();
+                this.Show();
+                reset();
+                SlideControl.currentSlide = 5000;
+            }
+            else
+            {
+                MessageBox.Show("Sorry, there seems to be an issue with that token. Please get a new token from the control app.", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                reset();
+            }
+        }
+
+        private void reset()
+        {
+            token1.Text = "";
+            token2.Text = "";
+            token3.Text = "";
+            token4.Text = "";
+            token5.Text = "";
+            token6.Text = "";
+            token1.Select();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            Server_Communication.setupUid();
             token1.Select();
         }
 
@@ -138,6 +160,10 @@ namespace Universal_Presenter_Remote
         private void ControlButton_Click(object sender, EventArgs e)
         {
             Server_Communication.token = Server_Communication.temptoken;
+            this.Hide();
+            ControlInterface interfaceWindow = new ControlInterface();
+            interfaceWindow.ShowDialog();
+            this.Show();
         }
     }
 }
