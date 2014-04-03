@@ -33,6 +33,7 @@
             this.PresentTab = new System.Windows.Forms.TabPage();
             this.JumpInTable = new System.Windows.Forms.TableLayoutPanel();
             this.PresentButton = new System.Windows.Forms.Button();
+            this.PresentLogo = new System.Windows.Forms.PictureBox();
             this.PresentWelcome = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.token6 = new System.Windows.Forms.TextBox();
@@ -46,16 +47,15 @@
             this.ControlToken = new System.Windows.Forms.Label();
             this.ControlWelcome = new System.Windows.Forms.Label();
             this.ControlButton = new System.Windows.Forms.Button();
-            this.ServerTimer = new System.Windows.Forms.Timer(this.components);
-            this.PresentLogo = new System.Windows.Forms.PictureBox();
             this.ControlLogo = new System.Windows.Forms.PictureBox();
+            this.ServerTimer = new System.Windows.Forms.Timer(this.components);
             this.LoginTabControl.SuspendLayout();
             this.PresentTab.SuspendLayout();
             this.JumpInTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.ControlTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ControlLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +111,16 @@
             this.PresentButton.Text = "Connecting...";
             this.PresentButton.UseVisualStyleBackColor = true;
             this.PresentButton.Click += new System.EventHandler(this.Present_Click);
+            // 
+            // PresentLogo
+            // 
+            this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR_Wide;
+            this.PresentLogo.Location = new System.Drawing.Point(190, 3);
+            this.PresentLogo.Name = "PresentLogo";
+            this.PresentLogo.Size = new System.Drawing.Size(260, 126);
+            this.PresentLogo.TabIndex = 3;
+            this.PresentLogo.TabStop = false;
             // 
             // PresentWelcome
             // 
@@ -293,30 +303,21 @@
             this.ControlButton.UseVisualStyleBackColor = true;
             this.ControlButton.Click += new System.EventHandler(this.ControlButton_Click);
             // 
+            // ControlLogo
+            // 
+            this.ControlLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ControlLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR_Wide;
+            this.ControlLogo.Location = new System.Drawing.Point(190, 3);
+            this.ControlLogo.Name = "ControlLogo";
+            this.ControlLogo.Size = new System.Drawing.Size(260, 126);
+            this.ControlLogo.TabIndex = 3;
+            this.ControlLogo.TabStop = false;
+            // 
             // ServerTimer
             // 
             this.ServerTimer.Enabled = true;
             this.ServerTimer.Interval = 1000;
             this.ServerTimer.Tick += new System.EventHandler(this.ServerTimer_Tick);
-            // 
-            // PresentLogo
-            // 
-            this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR_Wide;
-            this.PresentLogo.Location = new System.Drawing.Point(190, 3);
-            this.PresentLogo.Name = "PresentLogo";
-            this.PresentLogo.Size = new System.Drawing.Size(260, 126);
-            this.PresentLogo.TabIndex = 3;
-            this.PresentLogo.TabStop = false;
-            // 
-            // ControlLogo
-            // 
-            this.ControlLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ControlLogo.Location = new System.Drawing.Point(222, 3);
-            this.ControlLogo.Name = "ControlLogo";
-            this.ControlLogo.Size = new System.Drawing.Size(196, 126);
-            this.ControlLogo.TabIndex = 3;
-            this.ControlLogo.TabStop = false;
             // 
             // LoginForm
             // 
@@ -334,12 +335,12 @@
             this.PresentTab.ResumeLayout(false);
             this.JumpInTable.ResumeLayout(false);
             this.JumpInTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ControlTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PresentLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ControlLogo)).EndInit();
             this.ResumeLayout(false);
 

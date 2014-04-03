@@ -11,7 +11,7 @@ namespace Universal_Presenter_Remote
 {
     class Server_Communication
     {
-        private static string serverAddress = "http://localhost/";
+        private static string serverAddress = "http://upr.dbztech.com/";
         private static int uid = 0;
 
         public static bool serverAvailable = false;
