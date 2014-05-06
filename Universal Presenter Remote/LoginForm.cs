@@ -44,6 +44,7 @@ namespace Universal_Presenter_Remote
             token5.Text = "";
             token6.Text = "";
             token1.Select();
+            Server_Communication.reset();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -163,6 +164,7 @@ namespace Universal_Presenter_Remote
             this.Hide();
             ControlInterface interfaceWindow = new ControlInterface();
             interfaceWindow.ShowDialog();
+            reset();
             this.Show();
         }
     }

@@ -43,26 +43,29 @@
             this.SelectProgramDropdown.FormattingEnabled = true;
             this.SelectProgramDropdown.Items.AddRange(new object[] {
             "DataSource Failure"});
-            this.SelectProgramDropdown.Location = new System.Drawing.Point(12, 149);
+            this.SelectProgramDropdown.Location = new System.Drawing.Point(24, 287);
+            this.SelectProgramDropdown.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SelectProgramDropdown.Name = "SelectProgramDropdown";
-            this.SelectProgramDropdown.Size = new System.Drawing.Size(260, 21);
+            this.SelectProgramDropdown.Size = new System.Drawing.Size(509, 33);
             this.SelectProgramDropdown.TabIndex = 2;
             this.SelectProgramDropdown.SelectedIndexChanged += new System.EventHandler(this.SelectProgramDropdown_SelectedIndexChanged);
             // 
             // CustomProcessTextBox
             // 
-            this.CustomProcessTextBox.Location = new System.Drawing.Point(12, 176);
+            this.CustomProcessTextBox.Location = new System.Drawing.Point(24, 345);
+            this.CustomProcessTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CustomProcessTextBox.Name = "CustomProcessTextBox";
-            this.CustomProcessTextBox.Size = new System.Drawing.Size(260, 20);
+            this.CustomProcessTextBox.Size = new System.Drawing.Size(509, 31);
             this.CustomProcessTextBox.TabIndex = 3;
             this.CustomProcessTextBox.Visible = false;
             this.CustomProcessTextBox.TextChanged += new System.EventHandler(this.CustomProcessTextBox_TextChanged);
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(12, 202);
+            this.ConnectButton.Location = new System.Drawing.Point(24, 388);
+            this.ConnectButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ConnectButton.Name = "ConnectButton";
-            this.ConnectButton.Size = new System.Drawing.Size(260, 23);
+            this.ConnectButton.Size = new System.Drawing.Size(509, 44);
             this.ConnectButton.TabIndex = 4;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = true;
@@ -77,25 +80,29 @@
             // PresentLogo
             // 
             this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR_Wide;
-            this.PresentLogo.Location = new System.Drawing.Point(12, 12);
+            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR;
+            this.PresentLogo.Location = new System.Drawing.Point(24, 23);
+            this.PresentLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.PresentLogo.Name = "PresentLogo";
-            this.PresentLogo.Size = new System.Drawing.Size(260, 126);
+            this.PresentLogo.Size = new System.Drawing.Size(509, 252);
+            this.PresentLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PresentLogo.TabIndex = 5;
             this.PresentLogo.TabStop = false;
+            this.PresentLogo.Click += new System.EventHandler(this.PresentLogo_Click);
             // 
             // PresentationInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(2)))), ((int)(((byte)(152)))));
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(548, 440);
             this.Controls.Add(this.PresentLogo);
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.CustomProcessTextBox);
             this.Controls.Add(this.SelectProgramDropdown);
-            this.MaximumSize = new System.Drawing.Size(300, 300);
-            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximumSize = new System.Drawing.Size(574, 511);
+            this.MinimumSize = new System.Drawing.Size(574, 511);
             this.Name = "PresentationInterface";
             this.Text = "Presenter Interface";
             this.Load += new System.EventHandler(this.Interface_Load);

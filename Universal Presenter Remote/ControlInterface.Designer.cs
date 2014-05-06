@@ -44,18 +44,20 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.PreviousSlideButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.NextSlideButton, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 144);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(28, 277);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(260, 29);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(502, 56);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // PreviousSlideButton
             // 
-            this.PreviousSlideButton.Location = new System.Drawing.Point(3, 3);
+            this.PreviousSlideButton.Location = new System.Drawing.Point(6, 6);
+            this.PreviousSlideButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.PreviousSlideButton.Name = "PreviousSlideButton";
-            this.PreviousSlideButton.Size = new System.Drawing.Size(120, 23);
+            this.PreviousSlideButton.Size = new System.Drawing.Size(239, 44);
             this.PreviousSlideButton.TabIndex = 0;
             this.PreviousSlideButton.Text = "Previous Slide";
             this.PreviousSlideButton.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // 
             // NextSlideButton
             // 
-            this.NextSlideButton.Location = new System.Drawing.Point(133, 3);
+            this.NextSlideButton.Location = new System.Drawing.Point(257, 6);
+            this.NextSlideButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.NextSlideButton.Name = "NextSlideButton";
-            this.NextSlideButton.Size = new System.Drawing.Size(120, 23);
+            this.NextSlideButton.Size = new System.Drawing.Size(239, 44);
             this.NextSlideButton.TabIndex = 1;
             this.NextSlideButton.Text = "Next Slide";
             this.NextSlideButton.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // PlayMedia
             // 
             this.PlayMedia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PlayMedia.Location = new System.Drawing.Point(17, 179);
+            this.PlayMedia.Location = new System.Drawing.Point(28, 344);
+            this.PlayMedia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.PlayMedia.Name = "PlayMedia";
-            this.PlayMedia.Size = new System.Drawing.Size(250, 23);
+            this.PlayMedia.Size = new System.Drawing.Size(502, 44);
             this.PlayMedia.TabIndex = 1;
             this.PlayMedia.Text = "Play Media (PowerPoint)";
             this.PlayMedia.UseVisualStyleBackColor = true;
@@ -85,24 +89,27 @@
             // PresentLogo
             // 
             this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR_Wide;
-            this.PresentLogo.Location = new System.Drawing.Point(14, 12);
+            this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR;
+            this.PresentLogo.Location = new System.Drawing.Point(28, 23);
+            this.PresentLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.PresentLogo.Name = "PresentLogo";
-            this.PresentLogo.Size = new System.Drawing.Size(260, 126);
+            this.PresentLogo.Size = new System.Drawing.Size(502, 242);
+            this.PresentLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PresentLogo.TabIndex = 6;
             this.PresentLogo.TabStop = false;
             // 
             // ControlInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(2)))), ((int)(((byte)(152)))));
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(548, 440);
             this.Controls.Add(this.PresentLogo);
             this.Controls.Add(this.PlayMedia);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.MaximumSize = new System.Drawing.Size(300, 300);
-            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximumSize = new System.Drawing.Size(574, 511);
+            this.MinimumSize = new System.Drawing.Size(574, 511);
             this.Name = "ControlInterface";
             this.Text = "Control Presentation";
             this.Load += new System.EventHandler(this.ControlInterface_Load);

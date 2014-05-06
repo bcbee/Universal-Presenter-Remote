@@ -48,6 +48,13 @@ namespace Universal_Presenter_Remote
             uid = rnd.Next(9999, 999999999);
         }
 
+        public static void reset()
+        {
+            temptoken = 0;
+            token = 0;
+            checkStatus();
+        }
+
         public static bool sendCommand(string command)
         {
             string response = getResponse(command + "?token=" + token + "&holdfor=" + uid);

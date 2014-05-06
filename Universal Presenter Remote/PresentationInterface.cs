@@ -98,5 +98,10 @@ namespace Universal_Presenter_Remote
         {
             Server_Communication.update();
         }
+
+        private void PresentLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
