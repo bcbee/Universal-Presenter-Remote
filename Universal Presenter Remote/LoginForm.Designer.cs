@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.LoginTabControl = new System.Windows.Forms.TabControl();
             this.PresentTab = new System.Windows.Forms.TabPage();
             this.JumpInTable = new System.Windows.Forms.TableLayoutPanel();
@@ -132,12 +133,12 @@
             // 
             this.PresentWelcome.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PresentWelcome.AutoSize = true;
-            this.PresentWelcome.Font = new System.Drawing.Font("Bebas Neue", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PresentWelcome.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PresentWelcome.ForeColor = System.Drawing.SystemColors.Control;
-            this.PresentWelcome.Location = new System.Drawing.Point(402, 277);
+            this.PresentWelcome.Location = new System.Drawing.Point(335, 277);
             this.PresentWelcome.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.PresentWelcome.Name = "PresentWelcome";
-            this.PresentWelcome.Size = new System.Drawing.Size(475, 56);
+            this.PresentWelcome.Size = new System.Drawing.Size(610, 56);
             this.PresentWelcome.TabIndex = 0;
             this.PresentWelcome.Text = "Please enter your token:";
             // 
@@ -300,12 +301,12 @@
             // 
             this.ControlWelcome.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ControlWelcome.AutoSize = true;
-            this.ControlWelcome.Font = new System.Drawing.Font("Bebas Neue", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ControlWelcome.Font = new System.Drawing.Font("Arial", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ControlWelcome.ForeColor = System.Drawing.SystemColors.Control;
-            this.ControlWelcome.Location = new System.Drawing.Point(503, 277);
+            this.ControlWelcome.Location = new System.Drawing.Point(469, 277);
             this.ControlWelcome.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ControlWelcome.Name = "ControlWelcome";
-            this.ControlWelcome.Size = new System.Drawing.Size(273, 56);
+            this.ControlWelcome.Size = new System.Drawing.Size(341, 56);
             this.ControlWelcome.TabIndex = 0;
             this.ControlWelcome.Text = "Your token is:\r\n";
             // 
@@ -342,11 +343,12 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(6)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1348, 633);
             this.Controls.Add(this.LoginTabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(1374, 704);
             this.MinimumSize = new System.Drawing.Size(1374, 704);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlInterface));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.PreviousSlideButton = new System.Windows.Forms.Button();
             this.NextSlideButton = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             this.tableLayoutPanel2.Controls.Add(this.PreviousSlideButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.NextSlideButton, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(28, 277);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -55,7 +56,7 @@
             // PreviousSlideButton
             // 
             this.PreviousSlideButton.Location = new System.Drawing.Point(6, 6);
-            this.PreviousSlideButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PreviousSlideButton.Margin = new System.Windows.Forms.Padding(6);
             this.PreviousSlideButton.Name = "PreviousSlideButton";
             this.PreviousSlideButton.Size = new System.Drawing.Size(239, 44);
             this.PreviousSlideButton.TabIndex = 0;
@@ -66,7 +67,7 @@
             // NextSlideButton
             // 
             this.NextSlideButton.Location = new System.Drawing.Point(257, 6);
-            this.NextSlideButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NextSlideButton.Margin = new System.Windows.Forms.Padding(6);
             this.NextSlideButton.Name = "NextSlideButton";
             this.NextSlideButton.Size = new System.Drawing.Size(239, 44);
             this.NextSlideButton.TabIndex = 1;
@@ -78,7 +79,7 @@
             // 
             this.PlayMedia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PlayMedia.Location = new System.Drawing.Point(28, 344);
-            this.PlayMedia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PlayMedia.Margin = new System.Windows.Forms.Padding(6);
             this.PlayMedia.Name = "PlayMedia";
             this.PlayMedia.Size = new System.Drawing.Size(502, 44);
             this.PlayMedia.TabIndex = 1;
@@ -91,7 +92,7 @@
             this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR;
             this.PresentLogo.Location = new System.Drawing.Point(28, 23);
-            this.PresentLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PresentLogo.Margin = new System.Windows.Forms.Padding(6);
             this.PresentLogo.Name = "PresentLogo";
             this.PresentLogo.Size = new System.Drawing.Size(502, 242);
             this.PresentLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -100,14 +101,15 @@
             // 
             // ControlInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(2)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(548, 440);
             this.Controls.Add(this.PresentLogo);
             this.Controls.Add(this.PlayMedia);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(574, 511);
             this.MinimumSize = new System.Drawing.Size(574, 511);
             this.Name = "ControlInterface";

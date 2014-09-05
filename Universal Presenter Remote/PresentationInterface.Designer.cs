@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresentationInterface));
             this.SelectProgramDropdown = new System.Windows.Forms.ComboBox();
             this.CustomProcessTextBox = new System.Windows.Forms.TextBox();
             this.ConnectButton = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.SelectProgramDropdown.Items.AddRange(new object[] {
             "DataSource Failure"});
             this.SelectProgramDropdown.Location = new System.Drawing.Point(24, 287);
-            this.SelectProgramDropdown.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SelectProgramDropdown.Margin = new System.Windows.Forms.Padding(6);
             this.SelectProgramDropdown.Name = "SelectProgramDropdown";
             this.SelectProgramDropdown.Size = new System.Drawing.Size(509, 33);
             this.SelectProgramDropdown.TabIndex = 2;
@@ -53,7 +54,7 @@
             // CustomProcessTextBox
             // 
             this.CustomProcessTextBox.Location = new System.Drawing.Point(24, 345);
-            this.CustomProcessTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CustomProcessTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.CustomProcessTextBox.Name = "CustomProcessTextBox";
             this.CustomProcessTextBox.Size = new System.Drawing.Size(509, 31);
             this.CustomProcessTextBox.TabIndex = 3;
@@ -63,7 +64,7 @@
             // ConnectButton
             // 
             this.ConnectButton.Location = new System.Drawing.Point(24, 388);
-            this.ConnectButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ConnectButton.Margin = new System.Windows.Forms.Padding(6);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(509, 44);
             this.ConnectButton.TabIndex = 4;
@@ -82,7 +83,7 @@
             this.PresentLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PresentLogo.Image = global::Universal_Presenter_Remote.Properties.Resources.UPR;
             this.PresentLogo.Location = new System.Drawing.Point(24, 23);
-            this.PresentLogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PresentLogo.Margin = new System.Windows.Forms.Padding(6);
             this.PresentLogo.Name = "PresentLogo";
             this.PresentLogo.Size = new System.Drawing.Size(509, 252);
             this.PresentLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -100,7 +101,8 @@
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.CustomProcessTextBox);
             this.Controls.Add(this.SelectProgramDropdown);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(574, 511);
             this.MinimumSize = new System.Drawing.Size(574, 511);
             this.Name = "PresentationInterface";

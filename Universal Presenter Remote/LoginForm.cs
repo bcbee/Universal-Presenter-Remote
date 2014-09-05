@@ -51,6 +51,13 @@ namespace Universal_Presenter_Remote
         {
             Server_Communication.setupUid();
             token1.Select();
+            float dpiX = 96, dpiY = 96;
+            using (Graphics graphics = this.CreateGraphics())
+            {
+                dpiX = graphics.DpiX;
+                dpiY = graphics.DpiY;
+            }
+
         }
 
         private void token1_TextChanged(object sender, EventArgs e)

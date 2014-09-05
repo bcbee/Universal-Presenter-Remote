@@ -32,7 +32,7 @@ namespace Universal_Presenter_Remote
             }
             p.WaitForInputIdle();
             IntPtr h = p.MainWindowHandle;
-            SetForegroundWindow(h);
+            //SetForegroundWindow(h);
 
             switch (action)
             {
