@@ -11,7 +11,7 @@ namespace Universal_Presenter_Remote
 {
     class Server_Communication
     {
-        private static string serverAddress = "http://universalpresenterremote.azurewebsites.net/";
+        private static string serverAddress = "https://universalpresenterremote.com/";
         private static int uid = 0;
 
         public static bool serverAvailable = false;
